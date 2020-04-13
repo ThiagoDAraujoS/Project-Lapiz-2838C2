@@ -2,23 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Circuitry.Builder
-{
-    public class Chunk : MonoBehaviour
-    {
+namespace Circuitry.Builder {
+    public class Chunk {
         public Coordinate Size { get; set; }
         public Coordinate Position { get; set; }
-        public List<Chunk> Conections { get; set; }
         public int ColorId { get; set; }
 
-        void Start()
-        {
+        public ChipType Type { get; private set; }
 
-        }
+        private Chunk[] connections;
+        public ref Chunk this[int index] => ref connections[index];
 
-        void Update()
-        {
+        public Chunk(ChipType type, Coordinate position) {
 
         }
     }
 }
+
